@@ -5,7 +5,10 @@ This is done completely with native javascript and CSS transitions. I did instal
 
 I installed Greensock as the animation library I would typically use for granular control of keyframes, RAF and optimal legibility/maintainability later on.  But then I didn't use it, just so to prove to myself I could still do without.
 
-There's a few details I'm not crazy about, but for around 8 hours worth of work, I'm happy with this code.
+There's a few details I'm not crazy about, but for around 8 hours worth of work, I'm happy with this code.  Main things that still suck are:
+- how desktop hovers work
+- there's no resize event in javscript yet to complete fully fluid repsonsiveness
+- want to figure out fully fonts just to know how and better match aesthetic indicated
 
 I've commented liberally in new code in the attempt to provide some documentation of not just code but how I problem solve, and the commit messages are also illustrative of how I go about something like this form ground up.
 

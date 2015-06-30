@@ -39,7 +39,7 @@ xhr.send();
 // wrap build DOM in this for now to ensure we have data, probably better way to make on complete callback in native request
 // having to do this with $timeout in Angular always annoys me
 setTimeout(function(){
-  console.log('-----', navigation.raw, '----------');
+  // console.log('-----', navigation.raw, '----------');
 
   // prep navigation markup factory
   var topnav = navigation.raw.item_array.reverse(),
@@ -149,45 +149,7 @@ setTimeout(function(){
 
     }
 
-
-    console.log('well??', mobileSubnavClick);
-
-
-  // ipad portrait & up
-  } else {
-
-
-
-
-
-
-
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }, 100);
 

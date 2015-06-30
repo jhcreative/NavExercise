@@ -44,14 +44,12 @@ setTimeout(function(){
   // prep navigation markup factory
   var topnav = navigation.raw.item_array.reverse(),
       numTop = topnav.length,
-      widthPct = 100 / numTop,
-      widthString = "width: " + widthPct + "%",
       navReplace = '<ul class="topnav-list">';
 
   // loop through top level navigation data and create base markup string
   while(numTop --){
     var subFlag = false,
-        topItemString = '<li class="topnav list-item" data-dsktpwidth="' + widthString + '"><a class="topnav-link"',
+        topItemString = '<li class="topnav list-item"><a class="topnav-link"',
         thisTop = topnav[numTop],
         thisTopURL = 'href="' + thisTop.url,
         thisTopLabel = thisTop.label;
@@ -191,5 +189,5 @@ setTimeout(function(){
 
 
 
-}, 50);
+}, 100);
 

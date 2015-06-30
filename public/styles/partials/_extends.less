@@ -1,12 +1,6 @@
-// LESS extends
+// LESS extends & mixins
 
-
-// another clearless snippet
-.transition(@transition) {
-  -webkit-transition: @transition;
-  -moz-transition: @transition;
-  transition: @transition;
-}
+// extends are collections of classes
 
 // link/click/tap pattern I reuse -- needs position on the parent element
 // I usually define one of those too
@@ -19,6 +13,42 @@
 }
 
 
+// horizontal list-items
+.horz-list-item {
+  dislay: inline-block;
+  float: left;
+}
+
+// from previous project
+.hardware-acceleration {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+
+// mixins accept dynamic values
+
+// another clearless snippet
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  transition: @transition;
+}
+
+
+// I forget whose pattern this was originally, too
+.breakpoint-desktop(@rules) { // partial sliders & containers only
+  @media screen and (min-width: 768px) { @rules(); }
+}
+
 // I forget whose this was originally
 .clearfix(){
   &:before,
@@ -30,11 +60,4 @@
       clear: both;
   }
   *zoom: 1;
-}
-
-
-// horizontal list-items
-.horz-list-item {
-  dislay: inline-block;
-  float: left;
 }

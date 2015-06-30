@@ -12,10 +12,13 @@ body {
   background: @color_huge-pink;
   height: 60px;
   width: 100%;
-  padding: 20px 24px;
   position: fixed;
   top: 0; left: 0;
   z-index: 100;
+
+  .breakpoint-desktop({
+
+  });
 }
 // hero image
 .huge_hero {
@@ -76,6 +79,7 @@ body {
   z-index: -1;
   background: transparent;
   .transition(all 400ms ease);
+  &:extend(.hardware-acceleration);
 
   &.close {
     opacity: 1;

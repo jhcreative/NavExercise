@@ -1,0 +1,31 @@
+// LESS branded typography using base from _fonts.less
+
+
+// hero title
+.huge_title {
+  &:extend(.headline);
+  .transition (all 300ms ease);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  letter-spacing: -0.06em;
+  text-align: center;
+  color: @color_huge-white;
+
+  .breakpoint-desktop({
+    .font-size-rems(60);
+  });
+
+}
+
+// links
+.huge_link {
+  text-decoration: none;
+  .transition(all 300ms ease);
+  color: @color_huge-black;
+}
+
+

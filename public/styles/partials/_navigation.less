@@ -1,0 +1,199 @@
+// LESS actual navigation styles
+
+
+// putting mobile header logo here because if I had to go change it
+// to literal match of page 4 of wireframes,
+// this is where I'd want it
+
+// mobile nav button
+.huge_logo,
+.huge_mobile-nav {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 0;
+
+}
+// logo icon
+.huge_logo {
+  left: 15px;
+  background: url(/images/HUGE-white.png) center center no-repeat;
+  background-size: 75%;
+
+  .breakpoint-desktop({
+    position: relative;
+    display: inline-block;
+    float: left;
+  });
+}
+// nav icon
+.huge_mobile-nav {
+  right: 0;
+  background: url(/images/toggle-open.svg) center center;
+  .transition(all 300ms ease);
+
+  .breakpoint-desktop({
+    display: none;
+  });
+
+  &.close {
+     background: url(/images/toggle-close.svg) center center;
+  }
+}
+
+// outer navigation container
+.navigation-block {
+  position: absolute;
+  z-index: 20;
+  width: 85%;
+  height: auto;
+  background: @color_huge-white;
+  top: 60px; left: -100%;
+  padding: 12px 0 100px 0;
+  .transition(all 300ms ease);
+  &:extend(.hardware-acceleration);
+
+  .breakpoint-desktop({
+    display: inline-block;
+    width: auto;
+    position: relative;
+    top: auto; left: auto;
+    background: transparent;
+    padding-top: 0;
+  });
+
+  &.close {
+    left: 0;
+  }
+}
+
+// primary navigation elements
+.topnav-list {
+  .breakpoint-desktop({
+    .clearfix;
+    padding: 0px 0 0 24px;
+  });
+}
+.topnav.list-item {
+  position: relative;
+  height: 48px;
+  .transition(all 300ms ease);
+
+  .breakpoint-desktop({
+    display: inline-block;
+    width: 90px;
+    float: left;
+
+
+    &:hover {
+      .topnav-link {
+        background: @color_huge-white;
+        color: @color_huge-pink;
+      }
+      .subnav-list {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+  });
+
+  &.open {
+    height: auto;
+  }
+}
+.topnav-link {
+  &:extend(.to_front);
+  &:extend(.huge_link);
+  &:extend(.primary-nav);
+  padding: 15px 0 0 24px;
+  height: 48px;
+  .transition(all 300ms ease);
+
+  .breakpoint-desktop({
+    position: relative;
+    color: @color_huge-white;
+    .font-size-rems(16);
+    padding: 24px 0px 0px 0px;
+    height: 60px;
+    text-align: center;
+
+  });
+}
+
+
+
+
+// secondary navigation elements
+.mobile-subnav-click {
+  &:extend(.to_front);
+  .transition(all 300ms ease);
+  width: 48px; height: 48px;
+  overflow: hidden;
+  left: auto;
+  right: 0;
+  background: url(/images/chevron-open.png) left top no-repeat;
+  background-size: 75%;
+
+  .breakpoint-desktop({
+    display: none;
+  });
+
+  &.close {
+    background: url(/images/chevron-close.png) left top no-repeat;
+    background-size: 75%;
+  }
+}
+
+
+.subnav-list {
+  height: 0;
+  padding-left: 0px;
+  opacity: 0;
+  .transition(all 200ms ease);
+
+  .breakpoint-desktop({
+    background: @color_huge-white;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    opacity: 1;
+    width: 0;
+  });
+
+
+  &.open {
+    opacity: 1;
+    height: auto;
+    padding: 48px 0 0px 0px;
+
+  }
+}
+
+.subnav.list-item {
+  height: 48px;
+
+  .breakpoint-desktop({
+    &:last-child { height: 60px; }
+  });
+
+}
+.subnav-link {
+  &:extend(.huge_link);
+  &:extend(.secondary-nav);
+  padding: 12px 0 0 44px;
+  height: 48px;
+
+  .breakpoint-desktop({
+    padding: 15px 0 0px 18px;
+    .font-size-rems(14);
+  });
+
+  &:hover {
+    background: @color_huge-grey;
+    color: @color_huge-pink;
+  }
+}
+
+
+

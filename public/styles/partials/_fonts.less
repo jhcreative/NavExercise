@@ -1,0 +1,61 @@
+// LESS fonts
+
+
+// imported from fonts.css
+@font-face {
+  font-family: 'HUGEAvantGardeBold';
+  src: url("/fonts/huge_agb_v5-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/huge_agb_v5-webfont.woff") format("woff"), url("/fonts/huge_agb_v5-webfont.ttf") format("truetype"), url("/fonts/huge_agb_v5-webfont.svg#svgFontName") format("svg");
+}
+@font-face {
+  font-family: 'Galaxie';
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/GalaxieCopernicus-Book.eot?#iefix") format("embedded-opentype"), url("/fonts/GalaxieCopernicus-Book.woff") format("woff"), url("/fonts/GalaxieCopernicus-Book.svg#svgFontName") format("svg");
+}
+@font-face {
+  font-family: 'Galaxie';
+  font-style: italic;
+  font-weight: normal;
+  src: url("/fonts/GalaxieCopernicus-BookItalic.eot?#iefix") format("embedded-opentype"), url("/fonts/GalaxieCopernicus-BookItalic.woff") format("woff"), url("/fonts/GalaxieCopernicus-BookItalic.svg#svgFontName") format("svg");
+}
+
+// lifted a while ago from the clearless library https://github.com/clearleft/clearless
+.font-size-rems(@px-size){
+  @rem-size: @px-size / @base-font-size;
+  font-size: ~"@{px-size}px";
+  font-size: ~"@{rem-size}rem";
+}
+
+
+// base typography as LESS extends
+@base-font-size: 16;
+@base-line-height: 24;
+
+.headline {
+  font-family: HUGEAvantGardeBold;
+  .font-size-rems(30);
+  font-weight: 500;
+}
+
+.primary-nav {
+  font-family: HUGEAvantGardeBold;
+  .font-size-rems(21);
+  font-weight: 500;
+}
+
+.secondary-nav {
+  font-family: Galaxie;
+  .font-size-rems(16);
+}
+
+.body-text {
+  font-family: Galaxie;
+  .font-size-rems(14);
+  color: @color_huge-black;
+}
+
+
+
+
+
+

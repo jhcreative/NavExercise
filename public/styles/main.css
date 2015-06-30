@@ -12,7 +12,7 @@ h1 {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: 0;
-  font: 20vmin/1 HUGEAvantGardeBold;
+  font: HUGEAvantGardeBold;
   letter-spacing: -0.06em;
   text-align: center;
 }

@@ -61,6 +61,7 @@
   &:extend(.huge_link);
   &:extend(.primary-nav);
   padding: 15px 0 0 24px;
+  max-height: 48px;
 }
 
 
@@ -87,22 +88,33 @@
 .subnav-list {
   //overflow: hidden;
   height: 0;
-  padding-left: 24px;
+  padding-left: 0px;
   opacity: 0;
-  .transition(all 300ms ease);
+  .transition(all 200ms ease);
 
 
   &.open {
     opacity: 1;
     height: auto;
-    padding: 60px 60px 0 24px;
+    padding: 48px 0 0px 0px;
 
   }
 }
 
-.subnav-list-item {
+.subnav.list-item {
+  height: 48px;
 
+}
+.subnav-link {
+  &:extend(.huge_link);
+  &:extend(.secondary-nav);
+  padding: 12px 0 0 44px;
+  height: 48px;
 
+  &:hover {
+    background: @color_huge-grey;
+    color: @color_huge-pink;
+  }
 }
 
 

@@ -1,0 +1,19 @@
+// LESS extends
+
+
+// another clearless snippet
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  transition: @transition;
+}
+
+// link/click/tap pattern I reuse -- needs position on the parent element
+// I usually define one of those too
+.to_front {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}

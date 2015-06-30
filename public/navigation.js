@@ -5,7 +5,7 @@
 
 // from http://stackoverflow.com/questions/5223/length-of-a-javascript-object-that-is-associative-array
 // I confess to having lodash installed in recent Angular projects
-// so I'm putting this here for use later
+// so I'm putting this here in case I want it
 Object.size = function(obj){
   var size = 0, key;
   for (key in obj){
@@ -55,7 +55,7 @@ setTimeout(function(){
   // loop through top level navigation data and create base markup string
   while(numTop --){
     var subFlag = false,
-        topItemString = '<li class="topnav list-item" style="' + widthString + '"><a class="topnav-link"',
+        topItemString = '<li class="topnav list-item" data-dsktpwidth="' + widthString + '"><a class="topnav-link"',
         thisTop = topnav[numTop],
         thisTopURL = 'href="' + thisTop.url,
         thisTopLabel = thisTop.label;
@@ -102,7 +102,7 @@ setTimeout(function(){
   }
 
   // install new nav markup to the DOM
-  document.getElementById('HUGEnav').innerHTML = navReplace;
+  document.getElementById('hugeNav').innerHTML = navReplace;
 
 }, 50);
 

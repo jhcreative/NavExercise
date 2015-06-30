@@ -8,9 +8,19 @@
   <body>
 
     <!-- new navigation block - built out with javascript -->
-    <section class="huge_nav loading">
-      <nav id="HUGEnav" class="navigation-block"></nav>
-    </section>
+    <header class="huge_header">
+      <!-- mobile interaction with logo/menu/layout wasn't altogether clear to me in the wireframe
+          so this construction is what I would think best for thumb ergonomics & expectations
+          of largest likely user group: right-handed/singlehand phone user -->
+      <div class="huge_logo">
+
+      </div>
+      <!-- mobile menu click -->
+      <div id="hugeMobileNav" class="huge_mobile-nav"></div>
+
+      <!-- .json driven content inserts in this block -->
+      <nav id="hugeNav" class="navigation-block"></nav>
+    </header>
 
     <!-- new hero block -->
     <section class="huge_hero">

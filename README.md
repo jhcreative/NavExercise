@@ -1,6 +1,16 @@
 # Huge Navigation Exercise
 
-## Overview
+## John's Notes
+This is done completely with native javascript and CSS transitions. I did install LESS becuase managing CSS only transitions without it (or SASS) reduces dev velocity and compromises final product.
+
+I installed Greensock as the animation library I would typically use for granular control of keyframes, RAF and optimal legibility/maintainability later on.  But then I didn't use it, just so to prove to myself I could still do without.
+
+There's a few details I'm not crazy about, but for around 8 hours worth of work, I'm happy with this code.
+
+I've commented liberally in new code in the attempt to provide some documentation of not just code but how I problem solve, and the commit messages are also illustrative of how I go about something like this form ground up.
+
+
+## Huge Overview
 
 This exercise will have the candidate build a responsive site navigation driven by an AJAX request.
 

@@ -1,0 +1,30 @@
+// LESS containers
+
+body {
+  background: @color_huge-white;
+  font-family: Galaxie;
+  color: @color_huge-text;
+}
+
+// hero image
+.huge_hero {
+  position: relative;
+}
+//hero title
+.huge_title {
+  &:extend(.headline);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  letter-spacing: -0.06em;
+  text-align: center;
+  color: @color_huge-white;
+}
+
+.huge_p {
+   &:extend(.body-text);
+   margin: 15px auto 15px auto;
+}

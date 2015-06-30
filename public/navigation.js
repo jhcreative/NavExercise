@@ -51,12 +51,11 @@ setTimeout(function(){
       widthPct = 100 / numTop,
       widthString = "width: " + widthPct + "%",
       navReplace = '<ul class="topnav-list">';
-console.log('WTF', topnav);
 
   // loop through top level navigation data and create base markup string
   while(numTop --){
     var subFlag = false,
-        topItemString = '<li class="topnav-list-item" style="' + widthString + '"><a class="topnav-link"',
+        topItemString = '<li class="topnav list-item" style="' + widthString + '"><a class="topnav-link"',
         thisTop = topnav[numTop],
         thisTopURL = 'href="' + thisTop.url,
         thisTopLabel = thisTop.label;
@@ -79,7 +78,7 @@ console.log('WTF', topnav);
         var thisSub = thisTop.items[numSub],
             thisSubURL = 'href="' + thisSub.url,
             thisSubLabel = thisSub.label,
-            subItemString = '<li class="subnav-list-item"><a class="subnav-link"';
+            subItemString = '<li class="subnav list-item"><a class="subnav-link"';
         subItemString = subItemString + thisSubURL + '">' + thisSubLabel + '</a></li>';
         // add item to list
         subListString = subListString + subItemString;

@@ -5,7 +5,7 @@
 
 // from http://stackoverflow.com/questions/5223/length-of-a-javascript-object-that-is-associative-array
 // I confess to having lodash installed in recent Angular projects
-// so I'm putting this here in case I want it
+// so I'm putting this here now in case I want it later
 Object.size = function(obj){
   var size = 0, key;
   for (key in obj){
@@ -17,12 +17,8 @@ Object.size = function(obj){
 }
 
 
-
-
-// namespace anything we make for navigation
+// namespace anything we want to keep safe for this exercise
 var navigation = {};
-
-
 
 
 // make basic xhr request for the navigation data
@@ -39,8 +35,8 @@ xhr.onload = function() {
 xhr.send();
 
 
-// navigation markup factory
-// wrap build DOM in this for now to ensure we have data, probably better way to make callback in native request
+// navigation markup factory & click events
+// wrap build DOM in this for now to ensure we have data, probably better way to make on complete callback in native request
 // having to do this with $timeout in Angular always annoys me
 setTimeout(function(){
   console.log('-----', navigation.raw, '----------');
@@ -85,7 +81,7 @@ setTimeout(function(){
       }
 
       // complete subnav string
-      subListString = subListString + '</ul>';
+      subListString = subListString + '</ul><div class="mobile-subnav-click"></div>';
     }
 
     // if present, add completed subnavigation markup to its top level navigation item
@@ -103,6 +99,97 @@ setTimeout(function(){
 
   // install new nav markup to the DOM
   document.getElementById('hugeNav').innerHTML = navReplace;
+
+
+
+  // click events for navigation organized by breakpoint
+  var windowWidth = window.innerWidth;
+
+
+
+  // mobile first
+  if (windowWidth < 768) {
+
+    var windowHeight = window.innerHeight,
+        panel = document.getElementById('hugeNav'),
+        lightbox = document.getElementById('hugeLightbox');
+
+    // fill height of mobile nav
+    panel.style.height = windowHeight + 'px';
+
+
+    // opens/closes topnav
+    document.getElementById('hugeMobileNav').onclick = function(){
+
+      // control element visual
+      this.classList.toggle('close');
+
+      // actually move panel
+      panel.classList.toggle('close');
+
+      // lightbox panel
+      lightbox.classList.toggle('close');
+
+    }
+
+
+    // opens/closes subnav
+    var mobileSubnavClick = document.getElementsByClassName('mobile-subnav-click'),
+        numSubs = mobileSubnavClick.length;
+
+    // assign
+    while(numSubs --){
+      mobileSubnavClick[numSubs].onclick = function(){
+
+        // control element visual
+        this.classList.toggle('close');
+
+        // open menu
+        this.previousSibling.classList.toggle('open');
+        this.parentNode.classList.toggle('open');
+      }
+
+    }
+
+
+    console.log('well??', mobileSubnavClick);
+
+
+  // ipad portrait & up
+  } else {
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }, 50);
 

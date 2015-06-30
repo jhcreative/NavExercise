@@ -17,3 +17,24 @@
   height: 100%;
   z-index: 20;
 }
+
+
+// I forget whose this was originally
+.clearfix(){
+  &:before,
+  &:after {
+      content: "";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+  *zoom: 1;
+}
+
+
+// horizontal list-items
+.horz-list-item {
+  dislay: inline-block;
+  float: left;
+}

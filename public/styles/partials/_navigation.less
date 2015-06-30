@@ -35,34 +35,75 @@
 .navigation-block {
   position: absolute;
   z-index: 20;
-  width: 100%;
+  width: 85%;
   height: auto;
   background: @color_huge-white;
-  top: 60px; left: 0;
+  top: 60px; left: -100%;
   padding: 12px 0 100px 0;
+  .transition(all 300ms ease);
+  &.close {
+    left: 0;
+  }
 }
 
 // primary navigation elements
-.topnav-list {
-
-}
-.list-item.topnav {
+.topnav.list-item {
   position: relative;
   height: 48px;
+  .transition(all 300ms ease);
+
+  &.open {
+    height: auto;
+  }
 }
 .topnav-link {
   &:extend(.to_front);
   &:extend(.huge_link);
   &:extend(.primary-nav);
-  padding: 12px 0 0 24px;
+  padding: 15px 0 0 24px;
 }
 
 
 
 
-// secondary navigation list starts closed
-.subnav-list {
+// secondary navigation elements
+.mobile-subnav-click {
+  &:extend(.to_front);
+  .transition(all 300ms ease);
+  width: 48px; height: 48px;
   overflow: hidden;
-  height: 0;
+  left: auto;
+  right: 0;
+  background: url(/images/chevron-open.png) left top no-repeat;
+  background-size: 75%;
+
+  &.close {
+    background: url(/images/chevron-close.png) left top no-repeat;
+    background-size: 75%;
+  }
 }
+
+
+.subnav-list {
+  //overflow: hidden;
+  height: 0;
+  padding-left: 24px;
+  opacity: 0;
+  .transition(all 300ms ease);
+
+
+  &.open {
+    opacity: 1;
+    height: auto;
+    padding: 60px 60px 0 24px;
+
+  }
+}
+
+.subnav-list-item {
+
+
+}
+
+
 
